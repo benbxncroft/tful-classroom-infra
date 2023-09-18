@@ -1,0 +1,10 @@
+node_modules
+coverage
+.DS_Store
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+test-report.xml
+eslint-report.json

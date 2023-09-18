@@ -1,0 +1,44 @@
+{
+  "name": "classroom-infrastructure",
+  "version": "0.1.0",
+  "bin": {
+    "classroom-infrastructure": "bin/classroom-infrastructure.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest --coverage",
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore --output-file eslint-report.json --format json .",
+    "test-watch": "jest --watch",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "^1.56.0",
+    "@types/jest": "^24.9.0",
+    "@types/node": "10.17.5",
+    "aws-cdk": "^1.56.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.3.0",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-certificatemanager": "^1.56.0",
+    "@aws-cdk/aws-cloudfront": "^1.56.0",
+    "@aws-cdk/aws-dynamodb": "^1.56.0",
+    "@aws-cdk/aws-ecr": "^1.56.0",
+    "@aws-cdk/aws-ecr-assets": "^1.56.0",
+    "@aws-cdk/aws-ecs": "^1.56.0",
+    "@aws-cdk/aws-ecs-patterns": "^1.56.0",
+    "@aws-cdk/aws-elasticache": "^1.56.0",
+    "@aws-cdk/aws-route53": "^1.56.0",
+    "@aws-cdk/aws-route53-targets": "^1.56.0",
+    "@aws-cdk/aws-synthetics": "^1.56.0",
+    "@aws-cdk/core": "^1.56.0",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "eslint": "^6.8.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "source-map-support": "^0.5.16"
+  }
+}

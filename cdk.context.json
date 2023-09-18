@@ -1,0 +1,82 @@
+{
+  "@aws-cdk/core:enableStackNameDuplicates": "true",
+  "aws-cdk:enableDiffNoFail": "true",
+  "prod": {
+    "domains": {
+      "tutorful.co.uk": {
+        "acmArn": "arn:aws:acm:us-east-1:434786511414:certificate/ad3aa2ce-6cd5-404f-b29a-1276cffb9461"
+      },
+      "tutorful.ie": {
+        "acmArn": "arn:aws:acm:us-east-1:434786511414:certificate/3ce70c91-1d1b-4ab6-aa04-3afcc8a8ae61"
+      },
+      "tutorful.fr": {
+        "acmArn": "arn:aws:acm:us-east-1:434786511414:certificate/7770cbba-9e66-4a06-8e90-dcfaa23278ba"
+      }
+    },
+    "backendSuffix": "tutorful.io",
+    "acmArn": "arn:aws:acm:us-east-1:434786511414:certificate/0a53feeb-1880-4467-9258-f24b196c2d77",
+    "headerSecret": "NAjd5DsvEPEj+3aLvPVcsMnbngOfOXeev6BozRHgwJlpIFaa7l9zFncy1CYiEauqgXhE9YMAoxUrZ4RR",
+    "webAclId": "",
+    "redisNodeType": "cache.m6g.xlarge",
+    "fargateCPU": 512,
+    "fargateMemory": 1024,
+    "fargateScalePercentage": 75,
+    "redisReplicasPerNodeGroup": 1,
+    "objectBucketArn": "arn:aws:iam::434786511414:user/production-website",
+    "accountId": "434786511414",
+    "canaryCron": "0/10 6-21 ? * *"
+  },
+  "dev": {
+    "domains": {
+      "uk.tful.io": {},
+      "ie.tful.io": {},
+      "fr.tful.io": {}
+    },
+    "backendSuffix": "tful.io",
+    "headerSecret": "secret",
+    "acmArn": "arn:aws:acm:us-east-1:744945563720:certificate/17117333-9b58-4321-bdf8-67fb333b821a",
+    "webAclId": "17f04743-ad0f-494f-a837-207f7cd200c9",
+    "redisNodeType": "cache.t4g.micro",
+    "fargateCPU": 256,
+    "fargateMemory": 512,
+    "fargateScalePercentage": 75,
+    "redisReplicasPerNodeGroup": 1,
+    "objectBucketArn": "arn:aws:iam::434786511414:user/staging-website",
+    "accountId": "744945563720",
+    "canaryCron": "0 9 ? * MON"
+  },
+  "applicationPort": 3000,
+  "minScaleContainers": 1,
+  "maxScaleContainers": 100,
+  "region": "eu-west-1",
+  "availability-zones:account=744945563720:region=eu-west-1": [
+    "eu-west-1a",
+    "eu-west-1b",
+    "eu-west-1c"
+  ],
+  "availability-zones:account=434786511414:region=eu-west-1": [
+    "eu-west-1a",
+    "eu-west-1b",
+    "eu-west-1c"
+  ],
+  "hosted-zone:account=744945563720:domainName=tful.io:region=eu-west-1": {
+    "Id": "/hostedzone/ZS135B4LAJKQK",
+    "Name": "tful.io."
+  },
+  "hosted-zone:account=434786511414:domainName=tutorful.io:region=eu-west-1": {
+    "Id": "/hostedzone/Z04626673HZLAT9OPMTNS",
+    "Name": "tutorful.io."
+  },
+  "hosted-zone:account=434786511414:domainName=tutorful.co.uk:region=eu-west-1": {
+    "Id": "/hostedzone/Z22TDZN5CUCEQO",
+    "Name": "tutorful.co.uk."
+  },
+  "hosted-zone:account=434786511414:domainName=tutorful.ie:region=eu-west-1": {
+    "Id": "/hostedzone/Z0444721320XMFR1WUOPH",
+    "Name": "tutorful.ie."
+  },
+  "hosted-zone:account=434786511414:domainName=tutorful.fr:region=eu-west-1": {
+    "Id": "/hostedzone/Z035821821R343DT8I6JU",
+    "Name": "tutorful.fr."
+  }
+}
